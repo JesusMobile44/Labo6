@@ -94,6 +94,7 @@ public class Main {
                         }
                         else{
                             System.out.println("Cet emplacement de contact est occupé.");
+
                         }
                     }
                     break;
