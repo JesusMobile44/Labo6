@@ -141,6 +141,9 @@ public class Main {
                             fini=false;
                             System.out.println("Voulez-vous ajoutez un autre contact? (o/n)");
                             repChar=sc.next().toLowerCase().charAt(0);
+                            if (repChar=='n'){
+                                continuer='n';
+                            }
                         }
                         else{
                             System.out.println("Cet emplacement de contact est occupé.");
