@@ -52,36 +52,36 @@ public class Main {
 
                             //Questions
                             System.out.println("Prénom :");
-                            rep=sc.nextLine();
+                            rep=sc.next();
                             dude.setPrenom(rep);
 
                             System.out.println("Nom :");
-                            rep=sc.nextLine();
+                            rep=sc.next();
                             dude.setNom(rep);
 
                             //adresse
                             System.out.println("-=-Adresse Personnelle-=-");
                             System.out.println("Pays de résidence :");
-                            rep=sc.nextLine();
+                            rep=sc.next();
                             adresse.setPays(rep);
                             System.out.println("Province/État de résidence :");
-                            rep=sc.nextLine();
+                            rep=sc.next();
                             adresse.setProvince(rep);
                             System.out.println("Ville de résidence :");
-                            rep=sc.nextLine();
+                            rep=sc.next();
                             adresse.setVille(rep);
                             System.out.println("Appartement (o/n) :");
                             repChar=sc.next().toLowerCase().charAt(0);
                             if (repChar=='o'){//facultatif
                                 System.out.println("Nom de l'appart :");
-                                rep=sc.nextLine();
+                                rep=sc.next();
                                 adresse.setAppart(rep);
                             }
                             System.out.println("Rue :");
-                            rep=sc.nextLine();
+                            rep=sc.next();
                             adresse.setRue(rep);
                             System.out.println("Numero de porte");
-                            rep=sc.nextLine();
+                            rep=sc.next();
                             adresse.setNumPorte(rep);
 
                             dude.setAdresse(adresse);
@@ -89,29 +89,29 @@ public class Main {
                             //Occupation
                             System.out.println("-=-Information-=-");
                             System.out.println("Occupation :");
-                            rep=sc.nextLine();
+                            rep=sc.next();
 
                             occupation.setPoste(rep);
 
                             Adresse adresse1 = new Adresse("1A","rue",null,"Saguenay","Quebec","Canada");
                             System.out.println("Entreprise d'employement :");
-                            rep=sc.nextLine();
+                            rep=sc.next();
                             entreprise.setNom(rep);
                             System.out.println("-=-Adresse de l'entreprise-=-");
                             System.out.println("Pays de résidence :");
-                            rep=sc.nextLine();
+                            rep=sc.next();
                             adresse1.setPays(rep);
                             System.out.println("Province/État de résidence :");
-                            rep=sc.nextLine();
+                            rep=sc.next();
                             adresse1.setProvince(rep);
                             System.out.println("Ville de résidence :");
-                            rep=sc.nextLine();
+                            rep=sc.next();
                             adresse1.setVille(rep);
                             System.out.println("Rue :");
-                            rep=sc.nextLine();
+                            rep=sc.next();
                             adresse1.setRue(rep);
                             System.out.println("Numero de porte");
-                            rep=sc.nextLine();
+                            rep=sc.next();
                             adresse1.setNumPorte(rep);
 
                             entreprise.setAdresseEnt(adresse1);
@@ -125,10 +125,10 @@ public class Main {
                             for(int j=0;j<10&&fini==false;j++){
                                 Telephone telephone = new Telephone(null,null);
                                 System.out.println("Numero de telephone");
-                                rep=sc.nextLine();
+                                rep=sc.next();
                                 telephone.setNum(rep);
                                 System.out.println("Information de Contact");
-                                rep=sc.nextLine();
+                                rep=sc.next();
                                 telephone.setInformation(rep);
 
                                 dude.getListeNumero()[j]=telephone;
@@ -165,38 +165,38 @@ public class Main {
                                 switch (repChar){
                                     case 'n' :
                                         System.out.println("Nom :");
-                                        rep=sc.nextLine();
+                                        rep=sc.next();
                                         contact[placeContact].setNom(rep);
                                         break;
                                     case 'p' :
                                         System.out.println("Prénom :");
-                                        rep=sc.nextLine();
+                                        rep=sc.next();
                                         contact[placeContact].setPrenom(rep);
                                         break;
                                     case 'a' :
                                         Adresse adresse = new Adresse("1A","rue",null,"Saguenay","Quebec","Canada");
                                         System.out.println("-=-Adresse Personnelle-=-");
                                         System.out.println("Pays de résidence :");
-                                        rep=sc.nextLine();
+                                        rep=sc.next();
                                         adresse.setPays(rep);
                                         System.out.println("Province/État de résidence :");
-                                        rep=sc.nextLine();
+                                        rep=sc.next();
                                         adresse.setProvince(rep);
                                         System.out.println("Ville de résidence :");
-                                        rep=sc.nextLine();
+                                        rep=sc.next();
                                         adresse.setVille(rep);
                                         System.out.println("Appartement (o/n) :");
                                         repChar=sc.next().toLowerCase().charAt(0);
                                         if (repChar=='o'){//facultatif
                                             System.out.println("Nom de l'appart :");
-                                            rep=sc.nextLine();
+                                            rep=sc.next();
                                             adresse.setAppart(rep);
                                         }
                                         System.out.println("Rue :");
-                                        rep=sc.nextLine();
+                                        rep=sc.next();
                                         adresse.setRue(rep);
                                         System.out.println("Numero de porte");
-                                        rep=sc.nextLine();
+                                        rep=sc.next();
                                         adresse.setNumPorte(rep);
 
                                         contact[placeContact].setAdresse(adresse);
@@ -207,29 +207,29 @@ public class Main {
 
                                         System.out.println("-=-Information-=-");
                                         System.out.println("Occupation :");
-                                        rep=sc.nextLine();
+                                        rep=sc.next();
 
                                         occupation.setPoste(rep);
 
                                         Adresse adresse1 = new Adresse("1A","rue",null,"Saguenay","Quebec","Canada");
                                         System.out.println("Entreprise d'employement :");
-                                        rep=sc.nextLine();
+                                        rep=sc.next();
                                         entreprise.setNom(rep);
                                         System.out.println("-=-Adresse de l'entreprise-=-");
                                         System.out.println("Pays de résidence :");
-                                        rep=sc.nextLine();
+                                        rep=sc.next();
                                         adresse1.setPays(rep);
                                         System.out.println("Province/État de résidence :");
-                                        rep=sc.nextLine();
+                                        rep=sc.next();
                                         adresse1.setProvince(rep);
                                         System.out.println("Ville de résidence :");
-                                        rep=sc.nextLine();
+                                        rep=sc.next();
                                         adresse1.setVille(rep);
                                         System.out.println("Rue :");
-                                        rep=sc.nextLine();
+                                        rep=sc.next();
                                         adresse1.setRue(rep);
                                         System.out.println("Numero de porte");
-                                        rep=sc.nextLine();
+                                        rep=sc.next();
                                         adresse1.setNumPorte(rep);
 
                                         entreprise.setAdresseEnt(adresse1);
@@ -243,10 +243,10 @@ public class Main {
                                         for(int j=0;j<10&&fini==false;j++){
                                             Telephone telephone = new Telephone(null,null);
                                             System.out.println("Numero de telephone");
-                                            rep=sc.nextLine();
+                                            rep=sc.next();
                                             telephone.setNum(rep);
                                             System.out.println("Information de Contact");
-                                            rep=sc.nextLine();
+                                            rep=sc.next();
                                             telephone.setInformation(rep);
 
                                             contact[placeContact].getListeNumero()[j]=telephone;
