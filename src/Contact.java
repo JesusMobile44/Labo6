@@ -8,6 +8,9 @@ public class Contact {
     private Occupation occupation;
     private Telephone listeNumero[] = new Telephone[10];
 
+
+    private int nbTel = 0;
+
     public Contact(String nom, String prenom, Adresse adresse, Occupation occupation, Telephone[] listeNumero) {
         this.nom = nom;
         this.prenom = prenom;
@@ -55,4 +58,13 @@ public class Contact {
     public void setListeNumero(Telephone[] listeNumero) {
         this.listeNumero = listeNumero;
     }
+
+    public int getNbTel() {
+        return nbTel;
+    }
+
+    public void setNbTel(int nbTel) {
+        this.nbTel = nbTel;
+    }
+
 }

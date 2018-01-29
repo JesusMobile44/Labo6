@@ -130,7 +130,7 @@ public class Main {
                                 System.out.println("Information de Contact");
                                 rep=sc.next();
                                 telephone.setInformation(rep);
-
+                                dude.setNbTel(dude.getNbTel()+1);
                                 dude.getListeNumero()[j]=telephone;
                                 System.out.println("Voulez-vous ajoutez un numéro? (o/n)");
                                 repChar=sc.next().toLowerCase().charAt(0);
@@ -155,6 +155,7 @@ public class Main {
                     while(continuer=='o'){
                         System.out.println("Quel contact voulez-vous modifier?");
                         placeContact=sc.nextInt();
+                        placeContact=placeContact-1;
                         if (contact[placeContact]!=null){
                             fini1=false;
                             while (fini1==false){
@@ -271,6 +272,7 @@ public class Main {
                                     fini1=true;
                                 }
                             }
+                            continuer='n';
                         }
                         else{
                             System.out.println("Cet emplacement est vide");
@@ -279,8 +281,46 @@ public class Main {
                     break;
                 case 3 :
                     while(continuer=='o'){
-                        System.out.println("Quel contact voulz vous afficher?");
-
+                        System.out.println("Quel contact voulez vous afficher?");
+                        placeContact=sc.nextInt();
+                        placeContact=placeContact-1;
+                        System.out.println("");
+                        System.out.println("Nom : "+contact[placeContact].getNom());
+                        System.out.println("Prenom : "+contact[placeContact].getPrenom());
+                        System.out.println("");
+                        System.out.println("-=-Adresse Personnelle-=-");
+                        System.out.println("Pays de résidence : "+contact[placeContact].getAdresse().getPays());
+                        System.out.println("Province/État de résidence : "+contact[placeContact].getAdresse().getProvince());
+                        System.out.println("Ville de résidence : "+contact[placeContact].getAdresse().getVille());
+                        if (contact[placeContact].getAdresse().getAppart()!=null){
+                            System.out.println("Appartement : "+contact[placeContact].getAdresse().getAppart());
+                        }
+                        System.out.println("Rue : "+contact[placeContact].getAdresse().getRue());
+                        System.out.println("Numero de porte : "+contact[placeContact].getAdresse().getNumPorte());
+                        System.out.println("");
+                        System.out.println("-=-Information-=-");
+                        System.out.println("Occupation : "+contact[placeContact].getOccupation().getPoste());
+                        System.out.println("Entreprise d'employement : "+contact[placeContact].getOccupation().getEntreprise().getNom());
+                        System.out.println("");
+                        System.out.println("-=-Adresse de l'entreprise-=-");
+                        System.out.println("Pays de résidence : "+contact[placeContact].getOccupation().getEntreprise().getAdresseEnt().getPays());
+                        System.out.println("Province/État de résidence : "+contact[placeContact].getOccupation().getEntreprise().getAdresseEnt().getProvince());
+                        System.out.println("Ville de résidence : "+contact[placeContact].getOccupation().getEntreprise().getAdresseEnt().getVille());
+                        System.out.println("Rue : "+contact[placeContact].getOccupation().getEntreprise().getAdresseEnt().getRue());
+                        System.out.println("Numero de porte "+contact[placeContact].getOccupation().getEntreprise().getAdresseEnt().getNumPorte());
+                        System.out.println("");
+                        System.out.println("-=-Telephone-=-");
+                        for (int h=0;h<contact[placeContact].getNbTel();h++){
+                            if (contact[placeContact].getNbTel()<=h){
+                                System.out.println("Numero de telephone : " +contact[placeContact].getListeNumero()[h].getNum());
+                                System.out.println("Information : "+contact[placeContact].getListeNumero()[h].getInformation());
+                            }
+                        }
+                        System.out.println("Voulez-vous voir un autre contact? (o/n)");
+                        repChar=sc.next().toLowerCase().charAt(0);
+                        if (repChar=='n'){
+                            continuer='n';
+                        }
                     }
                     break;
                 default :
