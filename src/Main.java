@@ -23,7 +23,8 @@ public class Main {
         System.out.println("Bienvenue dans votre liste de contact!");
         System.out.println("======================================");
         System.out.println("");
-
+        System.out.println("ps: svp faites pas d'espaces");
+        System.out.println("");
         //Menu
         while(choixMenu!=4){
             continuer='o';
