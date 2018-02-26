@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Created by BelSi1731422 on 2018-01-22.
  */
@@ -24,5 +26,20 @@ public class Occupation {
 
     public void setEntreprise(Entreprise entreprise) {
         this.entreprise = entreprise;
+    }
+
+    public static Occupation creerOccupation(){
+        String rep;
+        char repChar;
+        Scanner sc = new Scanner(System.in);
+
+        Occupation occupation = new Occupation(null,null);
+
+        System.out.println("Occupation :");
+        rep=sc.next();
+        occupation.setPoste(rep);
+        occupation.setEntreprise(Entreprise.creerEntreprise());
+
+        return occupation;
     }
 }

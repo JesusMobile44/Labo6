@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Created by BelSi1731422 on 2018-01-22.
  */
@@ -66,5 +68,6 @@ public class Contact {
     public void setNbTel(int nbTel) {
         this.nbTel = nbTel;
     }
+
 
 }

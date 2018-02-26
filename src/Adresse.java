@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Created by BelSi1731422 on 2018-01-22.
  */
@@ -64,5 +66,38 @@ public class Adresse {
 
     public void setPays(String pays) {
         this.pays = pays;
+    }
+    public static Adresse creerAdresse(){
+        String rep;
+        char repChar;
+        Scanner sc = new Scanner(System.in);
+
+        Adresse nouvelleAdresse = new Adresse("1A","rue",null,"Saguenay","Quebec","Canada");
+
+        System.out.println("-=-Adresse-=-");
+        System.out.println("Pays de résidence :");
+        rep=sc.next();
+        nouvelleAdresse.setPays(rep);
+        System.out.println("Province/État de résidence :");
+        rep=sc.next();
+        nouvelleAdresse.setProvince(rep);
+        System.out.println("Ville de résidence :");
+        rep=sc.next();
+        nouvelleAdresse.setVille(rep);
+        System.out.println("Appartement (o/n) :");
+        repChar=sc.next().toLowerCase().charAt(0);
+        if (repChar=='o'){//facultatif
+            System.out.println("Nom de l'appart :");
+            rep=sc.next();
+            nouvelleAdresse.setAppart(rep);
+        }
+        System.out.println("Rue :");
+        rep=sc.next();
+        nouvelleAdresse.setRue(rep);
+        System.out.println("Numero de porte");
+        rep=sc.next();
+        nouvelleAdresse.setNumPorte(rep);
+
+        return nouvelleAdresse;
     }
 }
