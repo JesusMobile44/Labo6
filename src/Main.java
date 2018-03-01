@@ -1,4 +1,6 @@
 import java.lang.invoke.SwitchPoint;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -212,12 +214,11 @@ public class Main {
 
         if (contact[placeContact]==null){
 
-
-            Telephone listeNumero[] = new Telephone[10];
-            Contact dude = new Contact("Jass","Hugh",null,null,listeNumero);
+            List<Telephone> listeNumero = new ArrayList<Telephone>();
+            Contact dude = new Contact();
             contact[placeContact-1]=dude;
 
-            //Questions
+            //Question
             System.out.println("Prénom :");
             rep=sc.next();
             dude.setPrenom(rep);

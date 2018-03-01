@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -8,12 +10,12 @@ public class Contact {
     private String prenom;
     private Adresse adresse;
     private Occupation occupation;
-    private Telephone listeNumero[] = new Telephone[10];
+    private List<Telephone> listeNumero = new ArrayList<Telephone>();
 
 
     private int nbTel = 0;
 
-    public Contact(String nom, String prenom, Adresse adresse, Occupation occupation, Telephone[] listeNumero) {
+    public Contact() {
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
@@ -53,11 +55,11 @@ public class Contact {
         this.occupation = occupation;
     }
 
-    public Telephone[] getListeNumero() {
+    public List<Telephone> getListeNumero() {
         return listeNumero;
     }
 
-    public void setListeNumero(Telephone[] listeNumero) {
+    public void setListeNumero(List<Telephone> listeNumero) {
         this.listeNumero = listeNumero;
     }
 
@@ -79,9 +81,11 @@ public class Contact {
 
         occupation.afficherOccupation();
 
-        for (int h=0;h<nbTel;h++){
+        int h = 0;
+        for (Telephone telephone : listeNumero){
             System.out.println("Telephone #"+(h+1));
-            listeNumero[h].afficherTel();
+            telephone.afficherTel();
+            h++;
         }
     }
 }
