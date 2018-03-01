@@ -43,4 +43,10 @@ public class Entreprise {
 
         return entreprise;
     }
+    public void afficherEntreprise(){
+        System.out.println("Entreprise d'employement : "+nom);
+        System.out.println("");
+        System.out.println("-=-Adresse Entreprise-=-");
+        adresseEnt.afficherAdresse();
+    }
 }

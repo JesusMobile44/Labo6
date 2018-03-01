@@ -69,5 +69,20 @@ public class Contact {
         this.nbTel = nbTel;
     }
 
+    public void afficherContact(){
+        System.out.println("");
+        System.out.println("Nom : "+nom);
+        System.out.println("Prenom : "+prenom);
+        System.out.println("");
+        System.out.println("-=-Adresse Personnelle-=-");
+        adresse.afficherAdresse();
 
+        occupation.afficherOccupation();
+
+        for (int h=0;h<nbTel;h++){
+            System.out.println("Telephone #"+(h+1));
+            listeNumero[h].afficherTel();
+        }
+    }
 }
+

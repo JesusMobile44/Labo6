@@ -26,4 +26,9 @@ public class Telephone {
         this.num = num;
     }
 
+    public void afficherTel(){
+
+        System.out.println("Numero de telephone : " +num);
+        System.out.println("Information : "+information);
+    }
 }

@@ -100,4 +100,15 @@ public class Adresse {
 
         return nouvelleAdresse;
     }
+    public void afficherAdresse(){
+        System.out.println("Pays : "+pays);
+        System.out.println("Province/État : "+province);
+        System.out.println("Ville : "+ville);
+        if (appart!=null){
+            System.out.println("Appartement : "+appart);
+        }
+        System.out.println("Rue : "+rue);
+        System.out.println("Numero de porte : "+numPorte);
+        System.out.println("");
+    }
 }

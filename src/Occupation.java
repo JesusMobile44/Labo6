@@ -42,4 +42,10 @@ public class Occupation {
 
         return occupation;
     }
+    public void afficherOccupation(){
+        System.out.println("-=-Information-=-");
+        System.out.println("Occupation : "+poste);
+
+        entreprise.afficherEntreprise();
+    }
 }

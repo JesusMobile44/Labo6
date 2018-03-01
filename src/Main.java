@@ -10,11 +10,11 @@ public class Main {
         //Valeur
         int choixMenu = 0;
         int placeContact = 0;
-        char continuer = 'o';//('o'/'n')
+        char continuer;//('o'/'n')
         String rep;
         char repChar;
         boolean fini = false;
-        boolean fini1 = false;
+        boolean fini1;
         Contact contact[] = new Contact[10];
 
         Scanner sc = new Scanner(System.in);
@@ -27,7 +27,6 @@ public class Main {
         System.out.println("");
         //Menu
         while(choixMenu!=4){
-            continuer='o';
             System.out.println("Que voulez-vous faire?");
             System.out.println(" 1-Ajouter un contact");
             System.out.println(" 2-Modifier un contact");
@@ -55,7 +54,7 @@ public class Main {
                         placeContact=placeContact-1;
                         if (contact[placeContact]!=null){
                             fini1=false;
-                            while (fini1==false){
+                            while (!fini1){
                                 System.out.println("Que voulez vous modifiez?");
                                 System.out.println("Nom? (n)");
                                 System.out.println("Prénom? (p)");
@@ -141,7 +140,7 @@ public class Main {
                                         break;
                                     case 'i' :
                                         System.out.println("-=-Telephone-=-");
-                                        for(int j=0;j<10&&fini==false;j++){
+                                        for(int j=0;j<10&&!fini;j++){
                                             Telephone telephone = new Telephone(null,null);
                                             System.out.println("Numero de telephone");
                                             rep=sc.next();
@@ -182,37 +181,9 @@ public class Main {
                         placeContact=sc.nextInt();
                         placeContact=placeContact-1;
                         System.out.println("");
-                        System.out.println("Nom : "+contact[placeContact].getNom());
-                        System.out.println("Prenom : "+contact[placeContact].getPrenom());
-                        System.out.println("");
-                        System.out.println("-=-Adresse Personnelle-=-");
-                        System.out.println("Pays de résidence : "+contact[placeContact].getAdresse().getPays());
-                        System.out.println("Province/État de résidence : "+contact[placeContact].getAdresse().getProvince());
-                        System.out.println("Ville de résidence : "+contact[placeContact].getAdresse().getVille());
-                        if (contact[placeContact].getAdresse().getAppart()!=null){
-                            System.out.println("Appartement : "+contact[placeContact].getAdresse().getAppart());
-                        }
-                        System.out.println("Rue : "+contact[placeContact].getAdresse().getRue());
-                        System.out.println("Numero de porte : "+contact[placeContact].getAdresse().getNumPorte());
-                        System.out.println("");
-                        System.out.println("-=-Information-=-");
-                        System.out.println("Occupation : "+contact[placeContact].getOccupation().getPoste());
-                        System.out.println("Entreprise d'employement : "+contact[placeContact].getOccupation().getEntreprise().getNom());
-                        System.out.println("");
-                        System.out.println("-=-Adresse de l'entreprise-=-");
-                        System.out.println("Pays de résidence : "+contact[placeContact].getOccupation().getEntreprise().getAdresseEnt().getPays());
-                        System.out.println("Province/État de résidence : "+contact[placeContact].getOccupation().getEntreprise().getAdresseEnt().getProvince());
-                        System.out.println("Ville de résidence : "+contact[placeContact].getOccupation().getEntreprise().getAdresseEnt().getVille());
-                        System.out.println("Rue : "+contact[placeContact].getOccupation().getEntreprise().getAdresseEnt().getRue());
-                        System.out.println("Numero de porte "+contact[placeContact].getOccupation().getEntreprise().getAdresseEnt().getNumPorte());
-                        System.out.println("");
-                        System.out.println("-=-Telephone-=-");
-                        for (int h=0;h<contact[placeContact].getNbTel();h++){
-                            if (contact[placeContact].getNbTel()<=h){
-                                System.out.println("Numero de telephone : " +contact[placeContact].getListeNumero()[h].getNum());
-                                System.out.println("Information : "+contact[placeContact].getListeNumero()[h].getInformation());
-                            }
-                        }
+
+                        contact[placeContact].afficherContact();
+
                         System.out.println("Voulez-vous voir un autre contact? (o/n)");
                         repChar=sc.next().toLowerCase().charAt(0);
                         if (repChar=='n'){
@@ -227,8 +198,8 @@ public class Main {
         }
         System.exit(0);
     }
-    public static Contact ajouterContact(){
-        int placeContact = 0;
+    private static Contact ajouterContact(){
+        int placeContact;
         String rep;
         char repChar;
         boolean fini = false;
@@ -264,7 +235,7 @@ public class Main {
 
             //Num de Telephone
             System.out.println("-=-Telephone-=-");
-            for(int j=0;j<10&&fini==false;j++){
+            for(int j=0;j<10&&!fini;j++){
                 Telephone telephone = new Telephone(null,null);
                 System.out.println("Numero de telephone");
                 rep=sc.next();
@@ -286,6 +257,5 @@ public class Main {
              System.out.println("Cet emplacement de contact est occupé.");
              return null;
         }
-
     }
 }
