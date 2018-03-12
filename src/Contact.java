@@ -10,7 +10,7 @@ public class Contact {
     private String prenom;
     private Adresse adresse;
     private Occupation occupation;
-    private List<Telephone> listeNumero = new ArrayList<Telephone>();
+    private ArrayList<Telephone> listeNumero = new ArrayList<Telephone>();
 
 
     private int nbTel = 0;
@@ -81,12 +81,104 @@ public class Contact {
 
         occupation.afficherOccupation();
 
-        int h = 0;
-        for (Telephone telephone : listeNumero){
-            System.out.println("Telephone #"+(h+1));
-            telephone.afficherTel();
-            h++;
+        System.out.println("-=-Téléphones-=-");
+        for(Telephone telephone:listeNumero){
+            System.out.println("  "+telephone.getInformation()+" : "+telephone.getNum());
         }
+        System.out.println();
+    }
+    public static Contact ajouterContact(){
+        int placeContact;
+        String rep;
+        char repChar;
+        boolean fini = false;
+        Contact contact[] = new Contact[10];
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Dans quel emplacement voulez-vous ajouter un contact?(1 à 20)");
+        placeContact=sc.nextInt();
+
+        if (contact[placeContact]==null){
+
+            List<Telephone> listeNumero = new ArrayList<Telephone>();
+            Contact dude = new Contact();
+            contact[placeContact-1]=dude;
+            repChar = 'o';
+
+            //Question
+            System.out.println("Prénom :");
+            rep=sc.next();
+            dude.setPrenom(rep);
+
+            System.out.println("Nom :");
+            rep=sc.next();
+            dude.setNom(rep);
+
+            //adresse
+            dude.setAdresse(Adresse.creerAdresse());
+
+            //Occupation
+            System.out.println("-=-Information-=-");
+            dude.setOccupation(Occupation.creerOccupation());
+
+            //Num de Telephone
+            System.out.println("-=-Telephone-=-");
+            repChar = 'o';
+            while (repChar != 'n') {
+                repChar = sc.next().toLowerCase().charAt(0);
+                if(repChar=='o') {
+                    Telephone telephone=Telephone.creerTelephone();
+                    dude.listeNumero.add(telephone);
+                    System.out.println();
+                }
+            }
+            return dude;
+        }
+        else{
+            System.out.println("Cet emplacement de contact est occupé.");
+            return null;
+        }
+    }
+    public void modifierContact(){
+        Scanner sc = new Scanner(System.in);
+        char choixChar=0;
+        String input;
+        sc.reset();
+        System.out.println("Veuillez entrer les informations suivantes :");
+        //CONTACT
+        System.out.print("Prénom (" + prenom + ") : ");
+        input = sc.nextLine().trim();
+        input = sc.nextLine().trim();
+        if (!input.equals("")) {
+            prenom = input;
+        }
+        System.out.print("Nom (" + nom + ") : ");
+        input = sc.nextLine().trim();
+        if (!input.equals("")) {
+            nom = input;
+        }
+        //ADRESSE
+        getAdresse().modifierAdresse();
+        //OCCUPATION
+        getOccupation().modifierOccupation();
+        //TELEPHONE
+        System.out.println("Téléphones : ");
+        for (Telephone telephone:listeNumero) {
+            telephone.modifierTelephone();
+        }
+        System.out.println();
+        while (choixChar != 'n') {
+            System.out.print("Entrer un numéro de téléphone (o/n) ? ");
+            choixChar = sc.next().charAt(0);
+            if(choixChar=='o') {
+                Telephone tempTelephone=Telephone.creerTelephone();
+                listeNumero.add(tempTelephone);
+                System.out.println();
+            }
+        }
+        System.out.println();
+        System.out.println("Votre contact a été modifié avec succès !");
     }
 }
 

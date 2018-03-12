@@ -48,4 +48,15 @@ public class Occupation {
 
         entreprise.afficherEntreprise();
     }
+    public void modifierOccupation(){
+        Scanner sc = new Scanner(System.in);
+        String entre;
+        System.out.println("Occupation : ");
+        System.out.print("  Poste (" + poste + ") : ");
+        entre=sc.nextLine().trim();
+        if(!entre.equals("")) {
+            poste=entre;
+        }
+        getEntreprise().modifierEntreprise();
+    }
 }

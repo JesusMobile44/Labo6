@@ -111,4 +111,45 @@ public class Adresse {
         System.out.println("Numero de porte : "+numPorte);
         System.out.println("");
     }
+    public void modifierAdresse(){
+        Scanner sc = new Scanner(System.in);
+        String entre;
+        System.out.println("Adresse : ");
+
+        System.out.print("  Numéro de porte (" + numPorte + ") : ");
+        entre=sc.nextLine().trim();
+        if(!entre.equals("")) {
+            numPorte=entre;
+        }
+
+        System.out.print("  Rue (" + rue + ") : ");
+        entre=sc.nextLine().trim();
+        if(!entre.equals("")) {
+            rue=entre;
+        }
+
+        System.out.print("  Appartement (" + appart + ") : ");
+        entre=sc.nextLine().trim();
+        if(!entre.equals("")) {
+            appart=entre;
+        }
+
+        System.out.print("  Ville (" + ville + ") : ");
+        entre=sc.nextLine().trim();
+        if(!entre.equals("")) {
+            ville=entre;
+        }
+
+        System.out.print("  Province (" + province + ") : ");
+        entre=sc.nextLine().trim();
+        if(!entre.equals("")) {
+            province=entre;
+        }
+
+        System.out.print("  Pays (" + pays + ") : ");
+        entre=sc.nextLine().trim();
+        if(!entre.equals("")) {
+            pays=entre;
+        }
+    }
 }

@@ -49,4 +49,22 @@ public class Entreprise {
         System.out.println("-=-Adresse Entreprise-=-");
         adresseEnt.afficherAdresse();
     }
+    public void modifierEntreprise(){
+        Scanner sc = new Scanner(System.in);
+        String entre;
+        System.out.println("  Entreprise : ");
+        System.out.print("    Nom (" + nom+ ") : ");
+        entre=sc.nextLine().trim();
+        if(!entre.equals("")) {
+            nom=entre;
+        }
+        getAdresseEnt().modifierAdresse();
+    }
+    public void ajouterEntreprise(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("  Entreprise : ");
+        System.out.print("    Nom : ");
+        nom=sc.next();
+        getAdresseEnt().creerAdresse();
+    }
 }
